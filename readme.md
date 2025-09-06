@@ -1,57 +1,58 @@
+[![en](https://img.shields.io/badge/lang-en-blue.svg)](readme.md)
+[![es](https://img.shields.io/badge/lang-es-red.svg)](readme.es.md)
+
 # Monty Hall
 
-Imagina que estás en un programa de televisión para jugar un juego en el que puedes ganarte un auto nuevo. Hay tres puertas y solo detrás de una de ellas está el premio. El presentador te dice que elijas una de las puertas. Tú eliges una. A continuación, el presentador (que sabe en cuál puerta está el premio) abre una de las puertas vacías y te hace una pregunta:
+Imagine you are on a TV show playing a game where you can win a brand-new car. There are three doors, and only behind one of them is the prize. The host tells you to choose one of the doors. You make your choice. Next, the host (who knows where the prize is) opens one of the empty doors and asks you a question:
 
-**Participante, ¿quieres cambiar de puerta o mantener tu elección?**
+**Contestant, do you want to switch doors or stick with your choice?**
 
-Hasta este momento aún hay dos puertas cerradas. Detrás de una de ellas está el auto nuevo. El presentador abrió una de las puertas vacías para mostrarte que no hay nada detrás. Tienes dos opciones:
+At this point, there are still two closed doors. Behind one of them is the brand-new car. The host opened one of the empty doors to show you there’s nothing behind it. You have two options:
 
-1) Mantener tu elección
-2) Cambiar de puerta
+1) Stick with your choice  
+2) Switch to the other door  
 
-Recuerda que el presentador sabe en cuál puerta está el premio, así que podría estar tratando de engañarte para que elijas la puerta incorrecta.
+Remember that the host knows where the prize is, so he could be trying to trick you into choosing the wrong door.
 
-**¿Qué haces?**
+**What do you do?**
 
-Quizás pienses en no cambiar de puerta porque crees que el presentador quiere hacerte perder. También puede que pienses que no importa si cambias o no de puerta, puesto que solo una de ellas tiene el auto nuevo, y la probabilidad de acertar es siempre 1/3 o 33,33%.
-
----
-
-## Cambio de elección
-
-En realidad, lo mejor que puedes hacer es cambiar de puerta.
-
-Cuando eliges una puerta al principio, las probabilidades de ganar son 1/3 o 33,33%, y las de perder son 2/3 o 66,66%, porque solo una de las tres puertas tiene el premio. Si decides no cambiar de puerta, es equivalente a mantener 1/3 de probabilidad de ganar.
-
-Cuando el presentador abre una puerta, la puerta que elegiste sigue con 1/3 de probabilidad de ser la correcta. Lo que ocurre es que la otra puerta concentra los otros 2/3 de probabilidad restante.
-
-Al cambiar de puerta, no apuestas a que elegiste bien al principio (lo cual era poco probable, 1/3), sino a que elegiste mal (lo más probable, 2/3). Como el presentador siempre elimina una opción incorrecta, esa probabilidad se transfiere a la otra puerta cerrada.
+You might think about not switching doors because you believe the host wants you to lose. You might also think it doesn’t matter whether you switch or not, since only one door has the car, and the probability of winning is always 1/3 or 33.33%.
 
 ---
 
-## Conclusión
+## Switching Choice
 
-Al cambiar de puerta, las probabilidades de ganar pasan a ser 2/3 o 66,66%, en vez del 1/3 o 33,33% del principio.
+In reality, the best thing you can do is switch doors.
+
+When you first pick a door, the probability of winning is 1/3 or 33.33%, and the probability of losing is 2/3 or 66.66%, because only one of the three doors has the prize. If you decide not to switch, you keep that 1/3 chance of winning.
+
+When the host opens a door, the probability of your chosen door being correct is still 1/3. What happens is that the other unopened door now concentrates the remaining 2/3 probability.
+
+By switching, you are not betting that you chose correctly the first time (which was unlikely, 1/3), but rather that you chose incorrectly (which was more likely, 2/3). Since the host always eliminates one wrong option, that probability transfers to the other closed door.
 
 ---
 
-## Implementación
+## Conclusion
 
-En el archivo monty_hall.py se encuentra la implementación de este juego.
+By switching doors, your chances of winning increase to 2/3 or 66.66%, instead of the 1/3 or 33.33% you had at the beginning.
 
-Para ejecutar el programa en Windows:
+---
 
-``` python monty_hall.py <numero_de_iteraciones> ```
+## Implementation
 
-En Linux:
+In the file `monty_hall.py` you’ll find the implementation of this game.
 
-``` python3 monty_hall.py <numero_de_iteraciones> ```
+To run the program on Windows:
+``` python monty_hall.py <number_of_iterations> ```
 
-Ejemplo:
+On Linux:
+
+``` python3 monty_hall.py <number_of_iterations> ```
+
+Example:
 
 ``` python monty_hall.py 1000 ```
 
+The program simulates the Monty Hall game and prints how many times it results in a win, first when you don’t switch doors, and then when you do.
 
-El programa simula el juego de Monty Hall e imprime la cantidad de veces que resultó en victoria, primero cuando no se hace el cambio de puerta y luego cuando sí se hace el cambio de puerta.
-
-Cuando no se hace el cambio de puerta, el juego termina en victoria el 33,33% de las veces. Cuando se hace el cambio de puerta, el juego termina en victoria el 66,66% de las veces.
+When you don’t switch doors, the game ends in a win about 33.33% of the time. When you do switch doors, the game ends in a win about 66.66% of the time.
