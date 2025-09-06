@@ -79,6 +79,6 @@ for i in range(iterations):
         # Pasticipant wins
         wins_YES += 1
 
-print("Iterations: ", iterations)
-print("Wins without door change ", wins_NO, " -> ", wins_NO/iterations*100, "%")
-print("Wins with door change ", wins_YES, " -> ", wins_YES/iterations*100, "%")
+print(f"Iterations: {iterations}")
+print(f"Wins without door change: {wins_NO} -> {(wins_NO/iterations*100):.2f}%")
+print(f"Wins with door change: {wins_YES} -> {(wins_YES/iterations*100):.2f}%")
