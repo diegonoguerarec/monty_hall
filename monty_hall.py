@@ -1,84 +1,89 @@
 import random
+import sys
 
-iterations = 1000
+def main():
+    iterations = int(sys.argv[1])
 
-# Number of wins with NO door change
-wins_NO = 0
+    # Number of wins with NO door change
+    wins_NO = 0
 
-# Iterations with NO door change
-for i in range(iterations):
+    # Iterations with NO door change
+    for i in range(iterations):
 
-    # Represents three doors
-    doors = [0, 0, 0]
+        # Represents three doors
+        doors = [0, 0, 0]
 
-    # Choose random door to put the price
-    door_number = random.choice([0, 1, 2])
+        # Choose random door to put the price
+        door_number = random.choice([0, 1, 2])
 
-    # Putting the price (Set door to 1)
-    # 1: Price behind the door
-    # 0: No price
-    # -1: Opened door
-    doors[door_number] = 1
+        # Putting the price (Set door to 1)
+        # 1: Price behind the door
+        # 0: No price
+        # -1: Opened door
+        doors[door_number] = 1
 
-    # Random door choice from the participant
-    initial_choice = random.choice([0, 1, 2])
+        # Random door choice from the participant
+        initial_choice = random.choice([0, 1, 2])
 
-    if doors[initial_choice] == 1: # If participant choose correct door
-        # Open one of the other doors and ask participant if he wants to change door
+        if doors[initial_choice] == 1: # If participant choose correct door
+            # Open one of the other doors and ask participant if he wants to change door
 
-        # Ask participant if he wants to change door
-        # Participant says NO
-        # Since participant already choose correct door
-        wins_NO += 1 # Participant wins
+            # Ask participant if he wants to change door
+            # Participant says NO
+            # Since participant already choose correct door
+            wins_NO += 1 # Participant wins
 
-    #else: # If participant choose incorrect door
-        # Open the incorrect door left and ask participand if he wants to change door
+        #else: # If participant choose incorrect door
+            # Open the incorrect door left and ask participand if he wants to change door
 
-        # Ask participant if he wants to change door
-        # Participant says NO
-        # Since participant already choose incorrect door
-        # Pasticipant does not win
+            # Ask participant if he wants to change door
+            # Participant says NO
+            # Since participant already choose incorrect door
+            # Pasticipant does not win
 
 
-# Number of wins with door change
-wins_YES = 0
+    # Number of wins with door change
+    wins_YES = 0
 
-# Iterations with door change
-for i in range(iterations):
+    # Iterations with door change
+    for i in range(iterations):
 
-    # Represents three doors
-    doors = [0, 0, 0]
+        # Represents three doors
+        doors = [0, 0, 0]
 
-    # Choose random door to put the price
-    door_number = random.choice([0, 1, 2])
+        # Choose random door to put the price
+        door_number = random.choice([0, 1, 2])
 
-    # Putting the price (Set door to 1)
-    # 1: Price behind the door
-    # 0: No price
-    # -1: Opened door
-    doors[door_number] = 1
+        # Putting the price (Set door to 1)
+        # 1: Price behind the door
+        # 0: No price
+        # -1: Opened door
+        doors[door_number] = 1
 
-    # Random door choice from the participant
-    initial_choice = random.choice([0, 1, 2])
+        # Random door choice from the participant
+        initial_choice = random.choice([0, 1, 2])
 
-    if doors[initial_choice] == 1: # If participant choose correct door
-        # Open one of the other doors and ask participant if he wants to change door
+        if doors[initial_choice] == 1: # If participant choose correct door
+            # Open one of the other doors and ask participant if he wants to change door
 
-        # Ask participant if he wants to change door
-        # Participant says YES
-        # Since participant first choose correct door and changes it, now he is on incorrect door
-        # Participant does not win
-        pass
+            # Ask participant if he wants to change door
+            # Participant says YES
+            # Since participant first choose correct door and changes it, now he is on incorrect door
+            # Participant does not win
+            pass
 
-    else: # If participant choose incorrect door
-        # Open the incorrect door left and ask participand if he wants to change door
+        else: # If participant choose incorrect door
+            # Open the incorrect door left and ask participand if he wants to change door
 
-        # Ask participant if he wants to change door
-        # Participant says YES
-        # Since participant first choose incorrect door and changes it, now he is on correct door
-        # Pasticipant wins
-        wins_YES += 1
+            # Ask participant if he wants to change door
+            # Participant says YES
+            # Since participant first choose incorrect door and changes it, now he is on correct door
+            # Pasticipant wins
+            wins_YES += 1
 
-print(f"Iterations: {iterations}")
-print(f"Wins without door change: {wins_NO} -> {(wins_NO/iterations*100):.2f}%")
-print(f"Wins with door change: {wins_YES} -> {(wins_YES/iterations*100):.2f}%")
+    print(f"Iterations: {iterations}")
+    print(f"Wins without door change: {wins_NO} -> {(wins_NO/iterations*100):.2f}%")
+    print(f"Wins with door change: {wins_YES} -> {(wins_YES/iterations*100):.2f}%")
+
+if __name__ == "__main__":
+    main()
