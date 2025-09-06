@@ -79,5 +79,6 @@ for i in range(iterations):
         # Pasticipant wins
         wins_YES += 1
 
-print(wins_NO)
-print(wins_YES)
+print("Iterations: ", iterations)
+print("Wins without door change ", wins_NO, " -> ", wins_NO/iterations*100, "%")
+print("Wins with door change ", wins_YES, " -> ", wins_YES/iterations*100, "%")
